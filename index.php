@@ -19,11 +19,12 @@ if (!isset($_SESSION["user"])) {
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/x-icon" href="/img/">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
-  <title>Hello, world!</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico"><title>Gallery</title>
 </head>
 
 <style>
@@ -37,7 +38,7 @@ if (!isset($_SESSION["user"])) {
 
     <nav class="navbar navbar-expand-lg  navbar-light bg-white">
       <div class="container-fluid my-2">
-        <a class="navbar-brand text-danger" style="font-weight: 500 !important;" href="#">KYURREST</a>
+        <a class="navbar-brand text-danger" style="font-weight: 500 !important;" href="#">Pinterest</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -55,7 +56,8 @@ if (!isset($_SESSION["user"])) {
             </li>
           </ul>
           <form class="d-flex w-100">
-            <input class="form-control bg-light rounded-5 border-0 flex-fill me-2 ms-4" type="search" placeholder="search" aria-label="Search">
+            <input class="form-control bg-light rounded-5 border-0 flex-fill me-2 ms-4" type="search"
+              placeholder="search" aria-label="Search">
             <button class="btn btn-dark rounded-5" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
         </div>
@@ -120,7 +122,7 @@ if (!isset($_SESSION["user"])) {
                     <span>
                       <?php
                       $idfoto = $foto['fotoid'];
-                      $totalkomentar = mysqli_query($conn, "SELECT * FROM komentarfoto where fotoid = '$idfoto'");                      
+                      $totalkomentar = mysqli_query($conn, "SELECT * FROM komentarfoto where fotoid = '$idfoto'");
                       echo mysqli_num_rows($totalkomentar);
                       ?>
                     </span>
@@ -151,7 +153,7 @@ if (!isset($_SESSION["user"])) {
                 </div>
               </div>
             </div>
-            <span class="small text-secondary"><?=$foto['deskripsifoto'] ?></span>
+            <span class="small text-secondary"><?= $foto['deskripsifoto'] ?></span>
           </div>
         </div>
         <?php
